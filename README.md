@@ -39,7 +39,7 @@ console.log(adder(3, 5));
 Run the `tsc intro.ts --noImplicitAny` command again and you will see that it will no longer give any errors. However we should give proper types to out function.
 
 ``` typescript
-function adder(a: int, b: int): int {
+function adder(a: number, b: number): number {
     return a + b;
 }
 
