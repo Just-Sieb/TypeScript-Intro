@@ -1,0 +1,24 @@
+{
+    "name": "revere",
+    "version": "1.0.0",
+    "description": "Covenant Eyes V2 Push Notifications Server",
+    "author": "Covenant Eyes",
+    "private": true,
+    "types": "./src/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "server": "npm run build && node ./dist/server.js",
+        "client": "npm run build && node ./dist/client.js"
+    },
+    "dependencies": {
+        "axios": "^0.16.2",
+        "body-parser": "1.17.2",
+        "express": "4.15.3"
+    },
+    "devDependencies": {
+        "@types/body-parser": "1.16.4",
+        "@types/express": "4.0.36",
+        "tslint": "5.5.0",
+        "typescript": "2.4.1"
+    }
+}
