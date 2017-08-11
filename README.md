@@ -310,7 +310,7 @@ console.log(log<number>(3));
 console.log(log<string>("Captain Kirk"));
 ```
 
-Unlike C++ where generics essentially are just a template that is replaced at runtime. TypeScript will enforce a little more restrictions in its version of generics. TypeScript knows nothing about the generic so it will assume it has no valid properties. For example the following will fail.
+Unlike C++ where generics essentially are just a template that is replaced at compile time. TypeScript will enforce a little more restrictions in its version of generics. TypeScript knows nothing about the generic so it will assume it has no valid properties. For example the following will fail.
 ``` typescript
 function log<T>(message: T) {
     console.log(message.title); // Property 'title' does not exist on type 'T'.
