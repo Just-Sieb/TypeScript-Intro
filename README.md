@@ -4,11 +4,11 @@ A better way to do JavaScript
 
 ## About
 
-TypeScript is a open source langauge by Microsoft that compiles into JavaScript. The goal of TypeScript is to bring a sense of type safety into JavaScript. This intro to TypeScript is best suited for those who have familiarity of JavaScript. The goal of this intro is not to teach you how write TypeScript but the advantages it offers over plain JavaScript.
+TypeScript is a open source language by Microsoft that compiles into JavaScript. The goal of TypeScript is to bring a sense of type safety into JavaScript. This intro to TypeScript is best suited for those who have familiarity of JavaScript. The goal of this intro is not to teach you how write TypeScript but the advantages it offers over plain JavaScript.
 
 ## Get Started
 
-First off you are going to need NodeJS installed. Check [their website](https://nodejs.org/en/download/) for steps to install if you do not have it already. After Node is installed you will need to install Typescript. For that run the command `npm install -g typescript`. To verify it is installed run `tsc -v`. You should have at least Typescript version 2.0 or newer. If you do you are ready to continue. I do highly suggest also having a text editor with TypeScript support. My personal recomendation is Visual Studio Code. It comes with TypeScript support built in.
+First off you are going to need NodeJS installed. Check [their website](https://nodejs.org/en/download/) for steps to install if you do not have it already. After Node is installed you will need to install Typescript. For that run the command `npm install -g typescript`. To verify it is installed run `tsc -v`. You should have at least Typescript version 2.0 or newer. If you do you are ready to continue. I do highly suggest also having a text editor with TypeScript support. My personal recommendation is Visual Studio Code. It comes with TypeScript support built in.
 
 ## Learning TypeScript
 
@@ -24,9 +24,9 @@ function adder(a, b) {
 console.log(adder(3, 5));
 ```
 
-On the command line from the directory you saved it run `tsc intro.ts`. This will output a new file called `intro.js`. As you have probably gathered by now what we have entered is just standard JavaScript. That is becuase TypeScript is a full superset of JavaScript. The only difference between the compiled TypeScript code and the JavaScript code is the empty line was removed.
+On the command line from the directory you saved it run `tsc intro.ts`. This will output a new file called `intro.js`. As you have probably gathered by now what we have entered is just standard JavaScript. That is because TypeScript is a full superset of JavaScript. The only difference between the compiled TypeScript code and the JavaScript code is the empty line was removed.
 
-While this is valid TypeScript, it is not good TypeScript. Any value not given a type in TypeScript is automatically set to `any` which offers no advantage of what JavaScript itself is. `any` in TypeScript is essentially the same as a void pointer in C or an empty interface in Go. This time run the command `tsc intro.ts --noImplicitAny`. This is the same command but this time we are telling the TypeScript compiler that auto infering a variable as `any` should bring up a warning. The simple terrible way to fix this is to just set the arguements and return types for the `adder` function to `any`. To add a type to a variable declaration in typescript follow the name of the variable with a colon and then they name of the type.
+While this is valid TypeScript, it is not good TypeScript. Any value not given a type in TypeScript is automatically set to `any` which offers no advantage of what JavaScript itself is. `any` in TypeScript is essentially the same as a void pointer in C or an empty interface in Go. This time run the command `tsc intro.ts --noImplicitAny`. This is the same command but this time we are telling the TypeScript compiler that auto inferring a variable as `any` should bring up a warning. The simple terrible way to fix this is to just set the arguments and return types for the `adder` function to `any`. To add a type to a variable declaration in typescript follow the name of the variable with a colon and then they name of the type.
 
 ``` typescript
 function adder(a: any, b: any): any {
@@ -46,7 +46,7 @@ function adder(a: number, b: number): number {
 console.log(adder(3, 5));
 ```
 
-Now we are passing two numbers in and getting one number back. Now lets change the values we are putting in the call.
+Now we are passing two numbers in and getting one number back. Now let's change the values we are putting in the call.
 
 ``` typescript
 function adder(a: number, b: number): number {
@@ -58,7 +58,7 @@ console.log(adder("Potted", "Plant"));
 
 Compile once more and you should be now getting the output of `error TS2345: Argument of type '"Potted"' is not assignable to parameter of type 'number'.`.
 
-What if we want to add a third optional parameter to it? JavaScript itself does not care about how many or how few arguement you pass into a function. TypeScript however does care and will warn you. Lets try to compile the following snippet now.
+What if we want to add a third optional parameter to it? JavaScript itself does not care about how many or how few arguments you pass into a function. TypeScript however does care and will warn you. Let's try to compile the following snippet now.
 
 ``` typescript
 function adder(a: number, b: number, c: number): number {
@@ -201,7 +201,7 @@ let bones: User = {
 bones.username = 'doctor' // ERROR modifying a readonly key
 ```
 
-TypeScript will check object literals at creation time and when passing into a function if an object fullfilling an interface has extra keys
+TypeScript will check object literals at creation time and when passing into a function if an object fulfilling an interface has extra keys
 
 ``` typescript
 interface User {
